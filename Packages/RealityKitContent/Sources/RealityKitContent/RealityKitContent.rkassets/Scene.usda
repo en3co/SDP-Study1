@@ -12,41 +12,6 @@ def Xform "Root"
         bindMaterialAs = "weakerThanDescendants"
     )
 
-    def Sphere "Sphere" (
-        active = true
-        prepend apiSchemas = ["MaterialBindingAPI"]
-    )
-    {
-        rel material:binding = </Root/GridMaterial/GridMaterial> (
-            bindMaterialAs = "weakerThanDescendants"
-        )
-        double radius = 0.05
-        quatf xformOp:orient = (1, 0, 0, 0)
-        float3 xformOp:scale = (1, 1, 1)
-        float3 xformOp:translate = (0, 0, 0.0004)
-        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
-
-        def RealityKitComponent "Collider"
-        {
-            uint group = 1
-            uniform token info:id = "RealityKit.Collider"
-            uint mask = 4294967295
-            token type = "Default"
-
-            def RealityKitStruct "Shape"
-            {
-                float3 extent = (0.2, 0.2, 0.2)
-                float radius = 0.05
-                token shapeType = "Sphere"
-            }
-        }
-
-        def RealityKitComponent "InputTarget"
-        {
-            uniform token info:id = "RealityKit.InputTarget"
-        }
-    }
-
     def "GridMaterial" (
         active = true
         prepend references = @Materials/GridMaterial.usda@
@@ -54,6 +19,39 @@ def Xform "Root"
     {
         float3 xformOp:scale = (1, 1, 1)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "adjusted_scale_motherboard_v4" (
+        active = false
+        prepend references = @adjusted scale motherboard v4.usdz@
+    )
+    {
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (-0.00013828278, 0, 0.0053285956)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "motherboard_5april" (
+        prepend references = @motherboard 5april.usdz@
+    )
+    {
+        float3 xformOp:scale = (0.01, 0.01, 0.01)
+        float3 xformOp:translate = (-0.0046136677, -0.11, 0.085078195)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Geom"
+        {
+            over "Cube_008"
+            {
+                double3 xformOp:translate = (18.144691467285156, 2.3661017417907715, -35.264156341552734)
+            }
+
+            over "enclosure" (
+                active = false
+            )
+            {
+            }
+        }
     }
 }
 
