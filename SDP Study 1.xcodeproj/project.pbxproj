@@ -26,22 +26,9 @@
 		9062CAE62D9D694500DCC366 /* SDP Study 1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SDP Study 1Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		9062CAEC2D9D694500DCC366 /* Exceptions for "SDP Study 1" folder in "SDP Study 1" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 9062CACA2D9D694300DCC366 /* SDP Study 1 */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		9062CACD2D9D694400DCC366 /* SDP Study 1 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				9062CAEC2D9D694500DCC366 /* Exceptions for "SDP Study 1" folder in "SDP Study 1" target */,
-			);
 			path = "SDP Study 1";
 			sourceTree = "<group>";
 		};
